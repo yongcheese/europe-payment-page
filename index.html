@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3" />
   <meta name="theme-color" content="#6655e8" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
   <header class="site-header">
@@ -527,7 +527,7 @@
         <div class="result-orbit success-orbit"><div class="result-icon">✓</div></div>
         <p class="section-kicker">Payment completed</p>
         <h2>Your subscription is ready.</h2>
-        <p>Your device completed a platform WebAuthn verification and the approved test card matched. No real money was charged, and this page never received biometric data.</p>
+        <p>Your AgentAISLM access has been activated. Your token plan and developer credentials are ready to use.</p>
       </div>
       <div class="result-summary">
         <div><span>Plan</span><strong id="successPlan">Plus · Monthly</strong></div>
@@ -535,6 +535,23 @@
         <div><span>Verified with</span><strong id="successBiometric">Device verification</strong></div>
         <div><span>Reference</span><strong id="successReference">LOCAL-0000000</strong></div>
       </div>
+      <section class="yc-api-card" aria-labelledby="ycApiTitle">
+        <div class="yc-api-heading">
+          <div>
+            <span class="yc-api-kicker">Developer access</span>
+            <h3 id="ycApiTitle">宜創 API Key</h3>
+          </div>
+          <span class="yc-api-status">Active</span>
+        </div>
+        <div class="yc-api-key-row">
+          <code id="successApiKey" aria-label="宜創 API Key">yc_api_loading</code>
+          <button class="yc-copy-button" type="button" id="copyApiKey" aria-label="Copy 宜創 API Key">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v11H8z"></path><path d="M5 16H4V5h11v1"></path></svg>
+            <span id="copyApiKeyText">Copy</span>
+          </button>
+        </div>
+        <p class="yc-api-help">Keep this key private. Use it to authenticate requests to the 宜創 API.</p>
+      </section>
       <div class="result-actions">
         <button class="dark-button" type="button" id="closeSuccess">Return to pricing</button>
         <button class="ghost-button result-secondary" type="button" id="successAgain">Try another payment</button>
@@ -569,6 +586,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

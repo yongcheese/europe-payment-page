@@ -1163,3 +1163,114 @@ html[data-resolved-theme="dark"] .secure-context-warning { color: #ffaba3; }
   .brand > span:last-child { white-space: nowrap; }
   .header-actions { flex: 0 0 auto; max-width: calc(100vw - 180px); }
 }
+
+
+/* 宜創 API Key — scoped to the payment-success result page */
+.success-shell .yc-api-card {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(108, 92, 231, .20);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(108, 92, 231, .07), rgba(255, 255, 255, .72));
+}
+.success-shell .yc-api-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.success-shell .yc-api-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.success-shell .yc-api-heading h3 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: -.025em;
+}
+.success-shell .yc-api-status {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #08734b;
+  background: #dff8ed;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.success-shell .yc-api-key-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+.success-shell .yc-api-key-row code {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 50px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  border: 1px solid rgba(68, 51, 142, .14);
+  border-radius: 12px;
+  color: #2a205f;
+  background: rgba(255, 255, 255, .90);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+.success-shell .yc-copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 104px;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, #7160f3, #5948d7);
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.success-shell .yc-copy-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(89, 72, 215, .22);
+}
+.success-shell .yc-copy-button svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.success-shell .yc-api-help {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+html[data-resolved-theme="dark"] .success-shell .yc-api-card {
+  background: rgba(108, 92, 231, .10);
+}
+html[data-resolved-theme="dark"] .success-shell .yc-api-key-row code {
+  color: #eeeaff;
+  background: rgba(255, 255, 255, .06);
+}
+@media (max-width: 560px) {
+  .success-shell .yc-api-card { padding: 16px; }
+  .success-shell .yc-api-key-row { grid-template-columns: 1fr; }
+  .success-shell .yc-copy-button { width: 100%; }
+}

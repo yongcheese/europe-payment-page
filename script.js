@@ -489,6 +489,35 @@ function resultReference() {
   return `LOCAL-${Date.now().toString(36).slice(-7).toUpperCase()}`;
 }
 
+function generateYichuangApiKey() {
+  const bytes = new Uint8Array(24);
+  crypto.getRandomValues(bytes);
+  const token = Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+  return `yc_api_${token}`;
+}
+
+async function copyYichuangApiKey() {
+  const keyElement = document.getElementById('successApiKey');
+  const label = document.getElementById('copyApiKeyText');
+  if (!keyElement) return;
+  try {
+    await navigator.clipboard.writeText(keyElement.textContent.trim());
+  } catch {
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(keyElement);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy');
+    selection.removeAllRanges();
+  }
+  if (label) {
+    label.textContent = 'Copied';
+    window.setTimeout(() => { label.textContent = 'Copy'; }, 1600);
+  }
+  showToast('API Key copied.');
+}
+
 function showSuccess(method = biometricMethodLabel()) {
   successScreen.classList.add('open');
   successScreen.setAttribute('aria-hidden', 'false');
@@ -498,6 +527,10 @@ function showSuccess(method = biometricMethodLabel()) {
   document.getElementById('successAmount').textContent = formatMoney(getTotal());
   document.getElementById('successBiometric').textContent = method;
   document.getElementById('successReference').textContent = resultReference();
+  const apiKeyElement = document.getElementById('successApiKey');
+  if (apiKeyElement) apiKeyElement.textContent = generateYichuangApiKey();
+  const copyLabel = document.getElementById('copyApiKeyText');
+  if (copyLabel) copyLabel.textContent = 'Copy';
 }
 
 function showFailure(method = biometricMethodLabel(), reason = 'Device verification was cancelled or the card was not approved for this local test payment.', status = 'Not completed') {
@@ -818,6 +851,8 @@ document.getElementById('resetDeviceCredential').addEventListener('click', () =>
 });
 document.getElementById('closeBiometric').addEventListener('click', closeBiometric);
 biometricModal.addEventListener('click', (event) => { if (event.target === biometricModal) closeBiometric(); });
+
+document.getElementById('copyApiKey')?.addEventListener('click', copyYichuangApiKey);
 
 document.getElementById('closeSuccess').addEventListener('click', () => {
   successScreen.classList.remove('open');
