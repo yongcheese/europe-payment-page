@@ -1151,3 +1151,15 @@ html[data-resolved-theme="dark"] .secure-context-warning { color: #ffaba3; }
   .device-auth-card { grid-template-columns: 42px minmax(0, 1fr); }
   .device-auth-state { grid-column: 2; justify-self: start; }
 }
+
+
+/* Final responsive integrity fixes */
+.hero h1 { text-wrap: balance; }
+.hero > p { text-wrap: pretty; }
+@media (max-width: 600px) {
+  .header-actions > .dark-button.compact { display: none; }
+  .site-header { gap: 10px; }
+  .brand { min-width: 0; }
+  .brand > span:last-child { white-space: nowrap; }
+  .header-actions { flex: 0 0 auto; max-width: calc(100vw - 180px); }
+}

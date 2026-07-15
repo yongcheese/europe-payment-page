@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A responsive European pricing and payment prototype with browser-only authentication, Diners Club-only checkout, platform WebAuthn verification, test-card autofill, and full success and failure result pages." />
+  <meta name="description" content="A responsive European AgentAISLM token top-up page with browser-only authentication, platform WebAuthn verification, multilingual settings, and Supported payment support." />
   <title>AgentAISLM — European pricing</title>
   <link rel="icon" href="favicon.ico?v=3" sizes="any" />
   <link rel="shortcut icon" href="favicon.ico?v=3" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3" />
   <meta name="theme-color" content="#6655e8" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <header class="site-header">
@@ -33,11 +33,8 @@
   <main id="top">
     <section class="hero" aria-labelledby="page-title">
       <div class="eyebrow">Built for Europe</div>
-      <h1 id="page-title">Choose a plan.<br />Pay with Diners Club.</h1>
-      <p>
-        Clear European pricing, country-aware VAT and a Diners Club-only checkout —
-        presented as a safe front-end demonstration with no live payment connection.
-      </p>
+      <h1 id="page-title">Top up AgentAISLM.<br />Choose your token plan.</h1>
+      <p>Access AgentAISLM’s AI features with flexible token plans. Choose a package based on your usage, then complete checkout with country-aware VAT. Diners Club is the supported payment method.</p>
 
       <div class="hero-controls" aria-label="Pricing controls">
         <label class="field compact-field">
@@ -73,8 +70,8 @@
     <section class="plans-section" id="plans" aria-labelledby="plans-title">
       <div class="section-heading">
         <div>
-          <p class="section-kicker">Individual plans</p>
-          <h2 id="plans-title">Simple pricing, no hidden platform fees.</h2>
+          <p class="section-kicker">Token plans</p>
+          <h2 id="plans-title">Flexible token packages for every workload.</h2>
         </div>
         <p id="taxSummary">Prices shown before estimated German VAT.</p>
       </div>
@@ -163,25 +160,25 @@
 
     <section class="payment-preview" id="payments" aria-labelledby="payments-title">
       <div class="preview-copy">
-        <p class="section-kicker">Diners Club checkout</p>
-        <h2 id="payments-title">One European flow, Diners Club only.</h2>
+        <p class="section-kicker">Supported payment</p>
+        <h2 id="payments-title">Secure checkout for your token top-up.</h2>
         <p>
-          Every country uses the same Diners Club-related card options. The country selection only changes currency and estimated VAT. Device verification uses the browser’s platform WebAuthn prompt, while the test payment result is still handled locally without a payment gateway.
+          AgentAISLM uses this checkout for token purchases. Your country selection changes currency and estimated VAT, while Diners Club remains the supported payment network. Device verification uses the browser’s platform WebAuthn prompt.
         </p>
         <button class="dark-button" type="button" data-plan="Plus">Preview checkout</button>
       </div>
 
-      <div class="payment-panel" aria-label="Diners Club payment methods preview">
+      <div class="payment-panel" aria-label="Payment methods preview">
         <div class="panel-header">
           <div>
             <span class="status-dot"></span>
-            <strong id="localPaymentTitle">Diners Club options</strong>
+            <strong id="localPaymentTitle">Supported Diners Club cards</strong>
           </div>
           <span class="secure-label">Secure checkout</span>
         </div>
         <div class="method-preview-grid" id="methodPreviewGrid"></div>
         <div class="compliance-row">
-          <span>Diners Club only</span>
+          <span>Diners Club supported</span>
           <span>VAT estimate</span>
           <span>No gateway connected</span>
         </div>
@@ -190,7 +187,7 @@
 
     <section class="trust-section" aria-labelledby="trust-title">
       <p class="section-kicker">Designed for clarity</p>
-      <h2 id="trust-title">What this European checkout includes</h2>
+      <h2 id="trust-title">What your token checkout includes</h2>
       <div class="trust-grid">
         <article>
           <span class="number">01</span>
@@ -204,8 +201,8 @@
         </article>
         <article>
           <span class="number">03</span>
-          <h3>Diners Club network</h3>
-          <p>Only Diners Club International, Diners Club Corporate and related Discover network cards are shown.</p>
+          <h3>Diners Club support</h3>
+          <p>Diners Club is the supported payment method for token purchases, including International, Corporate and related Discover network cards.</p>
         </article>
         <article>
           <span class="number">04</span>
@@ -427,7 +424,7 @@
 
             <div class="form-section">
               <div class="form-section-heading">
-                <h3>Diners Club payment method</h3>
+                <h3>Payment method</h3>
                 <span>3 of 3</span>
               </div>
               <div class="payment-method-list" id="paymentMethodList"></div>
@@ -441,7 +438,7 @@
             <small class="form-error" id="formError">Please complete the highlighted fields.</small>
 
             <button class="pay-button" type="submit" id="payButton">
-              <span>Attempt Diners Club payment</span>
+              <span>Continue to verification</span>
               <strong id="payButtonAmount">€3.25</strong>
             </button>
             <p class="sca-note">Use only the designated test card. No gateway is connected and no live payment is processed.</p>
@@ -468,7 +465,7 @@
               <p id="renewalText">Renews monthly. Cancel before the next billing date.</p>
             </div>
             <div class="security-list">
-              <span>✓ Diners Club-only interface</span>
+              <span>✓ Diners Club supported checkout</span>
               <span>✓ No payment gateway connected</span>
               <span>✓ Platform WebAuthn device verification</span>
             </div>
@@ -572,6 +569,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

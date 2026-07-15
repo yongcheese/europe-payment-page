@@ -1,4 +1,4 @@
-# AgentAISLM — European Diners Club payment prototype
+# AgentAISLM — European token top-up prototype
 
 A pure front-end pricing, authentication and checkout prototype inspired by modern AI pricing pages.
 
@@ -6,7 +6,7 @@ A pure front-end pricing, authentication and checkout prototype inspired by mode
 
 - Responsive European pricing page
 - Country, currency and estimated VAT switching
-- Diners Club-related payment options only
+- AgentAISLM token plans with Diners Club checkout support
 - Pure front-end registration and login simulation
 - Browser `localStorage` for demo users, active session and interface preferences
 - No server, backend, database or payment gateway

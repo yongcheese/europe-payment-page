@@ -183,7 +183,6 @@ function renderPaymentFields() {
   const method = paymentMethods[selectedMethod];
   paymentFields.innerHTML = `
     <div class="card-fields">
-      <div class="method-info warning-info"><strong>Test checkout only.</strong> Enter the designated Diners Club test number. When it is complete, the remaining required payment and billing fields are generated automatically.</div>
       <label class="field"><span>Diners Club card number</span><input id="cardNumber" type="text" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 00" maxlength="17" data-payment-required /><small class="error-message">Enter a 14-digit card number.</small></label>
       <label class="field"><span>Name on card</span><input id="cardName" type="text" autocomplete="off" placeholder="Cardholder name" data-payment-required /><small class="error-message">Required.</small></label>
       <div class="card-row">
@@ -901,6 +900,85 @@ const translations = {
   }
 };
 
+
+
+const agentTokenTranslationExtension = {
+  'zh-CN': {
+    'Top up AgentAISLM.':'为 AgentAISLM 储值。',
+    'Choose your token plan.':'选择适合你的 Token 方案。',
+    'Access AgentAISLM’s AI features with flexible token plans. Choose a package based on your usage, then complete checkout with country-aware VAT. Diners Club is the supported payment method.':'通过灵活的 Token 方案使用 AgentAISLM 的 AI 功能。根据使用需求选择方案，并按所在国家计算增值税完成结账。大来卡是此页面支持的付款方式。',
+    'Token plans':'Token 方案',
+    'Flexible token packages for every workload.':'适合不同使用需求的灵活 Token 套餐。',
+    'Supported payment':'支持的付款方式',
+    'Secure checkout for your token top-up.':'安全完成 Token 储值。',
+    'AgentAISLM uses this checkout for token purchases. Your country selection changes currency and estimated VAT, while Diners Club remains the supported payment network. Device verification uses the browser’s platform WebAuthn prompt.':'AgentAISLM 使用此流程购买 Token。国家选择会改变币种与预估增值税，大来卡则是此页面支持的付款网络。设备验证会使用浏览器的 WebAuthn 系统提示。',
+    'Supported Diners Club cards':'支持的大来卡',
+    'Diners Club supported':'支持大来卡',
+    'What your token checkout includes':'Token 结账包含的功能',
+    'Diners Club support':'大来卡支持',
+    'Diners Club is the supported payment method for token purchases, including International, Corporate and related Discover network cards.':'Token 购买支持大来卡，包括 International、Corporate 与相关 Discover 网络卡。',
+    'Payment method':'付款方式',
+    'Continue to verification':'继续验证',
+    '✓ Diners Club supported checkout':'✓ 支持大来卡结账'
+  },
+  fr: {
+    'Top up AgentAISLM.':'Rechargez AgentAISLM.',
+    'Choose your token plan.':'Choisissez votre offre de jetons.',
+    'Access AgentAISLM’s AI features with flexible token plans. Choose a package based on your usage, then complete checkout with country-aware VAT. Diners Club is the supported payment method.':'Accédez aux fonctions IA d’AgentAISLM grâce à des offres de jetons flexibles. Choisissez une formule selon votre usage, puis payez avec une TVA adaptée au pays. Diners Club est le moyen de paiement pris en charge.',
+    'Token plans':'Offres de jetons',
+    'Flexible token packages for every workload.':'Des formules de jetons adaptées à chaque usage.',
+    'Supported payment':'Paiement pris en charge',
+    'Secure checkout for your token top-up.':'Paiement sécurisé pour recharger vos jetons.',
+    'AgentAISLM uses this checkout for token purchases. Your country selection changes currency and estimated VAT, while Diners Club remains the supported payment network. Device verification uses the browser’s platform WebAuthn prompt.':'AgentAISLM utilise ce paiement pour l’achat de jetons. Le pays sélectionné modifie la devise et la TVA estimée, tandis que Diners Club reste le réseau de paiement pris en charge. La vérification de l’appareil utilise WebAuthn.',
+    'Supported Diners Club cards':'Cartes Diners Club prises en charge',
+    'Diners Club supported':'Diners Club pris en charge',
+    'What your token checkout includes':'Ce que comprend le paiement des jetons',
+    'Diners Club support':'Prise en charge de Diners Club',
+    'Diners Club is the supported payment method for token purchases, including International, Corporate and related Discover network cards.':'L’achat de jetons accepte Diners Club International, Corporate et les cartes associées au réseau Discover.',
+    'Payment method':'Mode de paiement',
+    'Continue to verification':'Continuer vers la vérification',
+    '✓ Diners Club supported checkout':'✓ Paiement Diners Club pris en charge'
+  },
+  pt: {
+    'Top up AgentAISLM.':'Recarregue o AgentAISLM.',
+    'Choose your token plan.':'Escolha o seu plano de tokens.',
+    'Access AgentAISLM’s AI features with flexible token plans. Choose a package based on your usage, then complete checkout with country-aware VAT. Diners Club is the supported payment method.':'Aceda às funcionalidades de IA do AgentAISLM com planos de tokens flexíveis. Escolha um pacote de acordo com a utilização e conclua o pagamento com IVA adaptado ao país. Diners Club é o método de pagamento suportado.',
+    'Token plans':'Planos de tokens',
+    'Flexible token packages for every workload.':'Pacotes de tokens flexíveis para cada utilização.',
+    'Supported payment':'Pagamento suportado',
+    'Secure checkout for your token top-up.':'Pagamento seguro para recarregar tokens.',
+    'AgentAISLM uses this checkout for token purchases. Your country selection changes currency and estimated VAT, while Diners Club remains the supported payment network. Device verification uses the browser’s platform WebAuthn prompt.':'O AgentAISLM utiliza este checkout para compras de tokens. O país altera a moeda e o IVA estimado, enquanto Diners Club permanece a rede de pagamento suportada. A verificação utiliza o WebAuthn do navegador.',
+    'Supported Diners Club cards':'Cartões Diners Club suportados',
+    'Diners Club supported':'Diners Club suportado',
+    'What your token checkout includes':'O que inclui o checkout de tokens',
+    'Diners Club support':'Suporte Diners Club',
+    'Diners Club is the supported payment method for token purchases, including International, Corporate and related Discover network cards.':'As compras de tokens suportam Diners Club International, Corporate e cartões relacionados com a rede Discover.',
+    'Payment method':'Método de pagamento',
+    'Continue to verification':'Continuar para verificação',
+    '✓ Diners Club supported checkout':'✓ Checkout com Diners Club'
+  },
+  de: {
+    'Top up AgentAISLM.':'AgentAISLM aufladen.',
+    'Choose your token plan.':'Wähle deinen Token-Tarif.',
+    'Access AgentAISLM’s AI features with flexible token plans. Choose a package based on your usage, then complete checkout with country-aware VAT. Diners Club is the supported payment method.':'Nutze die KI-Funktionen von AgentAISLM mit flexiblen Token-Tarifen. Wähle ein Paket passend zu deiner Nutzung und schließe den Kauf mit länderspezifischer Mehrwertsteuer ab. Diners Club ist die unterstützte Zahlungsart.',
+    'Token plans':'Token-Tarife',
+    'Flexible token packages for every workload.':'Flexible Token-Pakete für jeden Bedarf.',
+    'Supported payment':'Unterstützte Zahlung',
+    'Secure checkout for your token top-up.':'Sicherer Checkout für deine Token-Aufladung.',
+    'AgentAISLM uses this checkout for token purchases. Your country selection changes currency and estimated VAT, while Diners Club remains the supported payment network. Device verification uses the browser’s platform WebAuthn prompt.':'AgentAISLM verwendet diesen Checkout für Token-Käufe. Das gewählte Land ändert Währung und geschätzte Mehrwertsteuer; Diners Club bleibt das unterstützte Zahlungsnetzwerk. Die Geräteprüfung erfolgt über WebAuthn.',
+    'Supported Diners Club cards':'Unterstützte Diners-Club-Karten',
+    'Diners Club supported':'Diners Club unterstützt',
+    'What your token checkout includes':'Was der Token-Checkout enthält',
+    'Diners Club support':'Diners-Club-Unterstützung',
+    'Diners Club is the supported payment method for token purchases, including International, Corporate and related Discover network cards.':'Token-Käufe unterstützen Diners Club International, Corporate und zugehörige Discover-Netzwerkkarten.',
+    'Payment method':'Zahlungsart',
+    'Continue to verification':'Weiter zur Verifizierung',
+    '✓ Diners Club supported checkout':'✓ Diners-Club-Checkout unterstützt'
+  }
+};
+Object.entries(agentTokenTranslationExtension).forEach(([language, entries]) => {
+  Object.assign(translations[language] || (translations[language] = {}), entries);
+});
 
 const biometricTranslationExtension = {
   'zh-CN': {
